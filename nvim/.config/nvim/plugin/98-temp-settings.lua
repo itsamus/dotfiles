@@ -1,0 +1,44 @@
+vim.g.mapleader = " "
+vim.keymap.set("n", "<leader>P", "<cmd>e ~/.config/nvim/todo.md<CR>")
+
+-- 1. Definieer de functie die de suggesties regelt
+-- local function my_custom_complete(findstart, base)
+--     if findstart == 1 then
+--         -- FASE 1: Bepaal waar het woord begint ten opzichte van de cursor.
+--         -- We zoeken naar achteren tot we een spatie of het begin van de regel tegenkomen.
+--         local line = vim.api.nvim_get_current_line()
+--         local col = vim.api.nvim_win_get_cursor(0)[2]
+--
+--         local start = col
+--         while start > 0 and line:sub(start, start):match("[%w_!]") do
+--             start = start - 1
+--         end
+--         return start -- Geeft de startpositie terug (kolomnummer)
+--     else
+--         -- FASE 2: 'base' is wat de gebruiker tot nu toe heeft getypt.
+--         -- We maken een lijst met mogelijke aanvullingen.
+--         local items = {
+--             { word = "console.log()", menu = "[JS Log]", info = "Print output to browser console" },
+--             { word = "print()", menu = "[Python Print]", info = "Print output to standard out" },
+--             { word = "printf()", menu = "[C Printf]", info = "Formatted print function" },
+--             { word = "panic!()", menu = "[Rust Panic]", info = "Trigger a panic and crash safely" },
+--         }
+--
+--         local matches = {}
+--         for _, item in ipairs(items) do
+--             -- Filter de items op basis van wat de gebruiker al heeft getypt ('base')
+--             if item.word:find("^" .. base) then
+--                 table.insert(matches, item)
+--             end
+--         end
+--
+--         return matches -- Geef de gefilterde lijst terug aan Neovim
+--     end
+-- end
+--
+-- -- Maak de functie globaal bereikbaar voor Vim (via v:lua)
+-- _G.my_custom_complete = my_custom_complete
+--
+-- -- 2. Stel de completefunc in voor de huidige buffer
+-- -- (Je kunt dit ook koppelen aan een specifiek bestandstype via ftplugin)
+-- vim.bo.completefunc = "v:lua.my_custom_complete"

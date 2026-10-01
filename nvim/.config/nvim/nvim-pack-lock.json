@@ -1,0 +1,32 @@
+{
+  "plugins": {
+    "mini.clue": {
+      "rev": "1c136d62729c8c3b0c2d91379bc37efac15d916e",
+      "src": "https://github.com/nvim-mini/mini.clue"
+    },
+    "mini.misc": {
+      "rev": "0524e8f7191782609374df6bcf9e607021ceccb1",
+      "src": "https://github.com/nvim-mini/mini.misc"
+    },
+    "nvim-colorizer.lua": {
+      "rev": "a065833f35a3a7cc3ef137ac88b5381da2ba302e",
+      "src": "https://github.com/norcalli/nvim-colorizer.lua"
+    },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "render-markdown.nvim": {
+      "rev": "640a3ec6d538bad17c328be373c7cad0293d9589",
+      "src": "https://github.com/meanderingprogrammer/render-markdown.nvim"
+    },
+    "telescope-fzy-native.nvim": {
+      "rev": "282f069504515eec762ab6d6c89903377252bf5b",
+      "src": "https://github.com/nvim-telescope/telescope-fzy-native.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "40aedd8a68c78a656a10a8d62d80c54af59420fb",
+      "src": "https://github.com/nvim-telescope/telescope.nvim"
+    }
+  }
+}

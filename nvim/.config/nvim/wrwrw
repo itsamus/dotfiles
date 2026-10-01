@@ -1,0 +1,6 @@
+Perl provider (optional) ~
+- perl executable: /usr/bin/perl
+- ❌ ERROR Failed to run: /usr/bin/perl '-MApp::cpanminus::fatscript' -e 'my $app = App::cpanminus::script->new; $app->parse_options ("--info", "-q", "Neovim::Ext"); exit $app->doit'
+  - ADVICE:
+    - Make sure you're connected to the internet.
+    - Are you behind a firewall or proxy?

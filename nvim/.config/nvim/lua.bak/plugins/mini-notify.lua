@@ -1,0 +1,49 @@
+-- require('mini.notify').setup({})
+-- local M = {}
+--
+-- require('mini.notify').setup({
+--     -- Content management
+--
+--     content = {
+--         -- Use notification message as is for LSP progress
+--         format = function(notif)
+--             if notif.data.source == 'lsp_progress' then return notif.msg end
+--             return MiniNotify.default_format(notif)
+--         end,
+--
+--         -- Show more recent notifications first
+--         sort = function(notif_arr)
+--             table.sort(
+--                 notif_arr,
+--                 function(a, b) return a.ts_update > b.ts_update end
+--             )
+--             return notif_arr
+--         end,
+--     },
+--
+--     -- Notifications about LSP progress
+--     lsp_progress = {
+--         -- Whether to enable showing
+--         enable = true,
+--
+--         -- Notification level
+--         level = 'INFO',
+--
+--         -- Duration (in ms) of how long last message should be shown
+--         duration_last = 1000,
+--     },
+--
+--     -- Window options
+--     window = {
+--         -- Floating window config
+--         config = {},
+--
+--         -- Maximum window width as share (between 0 and 1) of available columns
+--         max_width_share = 0.382,
+--
+--         -- Value of 'winblend' option
+--         winblend = 25,
+--     },
+-- })
+--
+-- return M
