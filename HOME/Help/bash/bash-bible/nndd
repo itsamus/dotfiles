@@ -1,0 +1,6 @@
+| Expression | Value  | What does it do? |
+| ---------- | ------ | ---------------- |
+| `-e`       | `file` | If file exists.
+| `-f`       | `file` | If file exists and is a regular file.
+| `-x`       | `file` | If file exists and is executable.
+

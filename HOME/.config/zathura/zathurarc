@@ -1,0 +1,348 @@
+# girara
+# n-completion-items
+# Defines the maximum number of displayed completion entries.
+# • Value type: Integer
+# • Default value: 15
+#
+# exec-command
+# Defines a command the should be prepended to any command run with exec.
+# • Value type: String
+# • Default value:
+#
+# font   Defines the font that will be used
+# • Value type: String
+# • Default value: monospace normal 9
+set font "AtkynsonMono Nerd Font 12"
+#
+# guioptions
+# Shows or hides GUI elements.  If it contains 'c', the command line is displayed.  If it contains 's', the statusbar is displayed.  If it contains 'h', the hor‐
+# izontal scrollbar is displayed.  If it contains 'v', the vertical scrollbar is displayed.
+# • Value type: String
+# • Default value: s
+#
+# statusbar-h-padding
+# Defines the horizontal padding of the statusbar and notificationbar
+# • Value type: Integer
+# • Default value: 8
+set statusbar-h-padding 12
+#
+# statusbar-v-padding
+# Defines the vertical padding of the statusbar and notificationbar
+# • Value type: Integer
+# • Default value: 2
+set statusbar-v-padding 8
+#
+# window-icon
+# Defines the path for a icon to be used as window icon.
+# • Value type: String
+# • Default value:
+#
+# window-height
+# Defines the window height on startup
+# • Value type: Integer
+# • Default value: 600
+set window-height 1080
+#
+# window-width
+# Defines the window width on startup
+# • Value type: Integer
+# • Default value: 800
+set window-width 1920
+#
+# abort-clear-search
+# Defines if the search results should be cleared on abort.
+# • Value type: Boolean
+# • Default value: true
+#
+# adjust-open
+# Defines which auto adjustment mode should be used if a document is loaded.  Possible options are "best-fit" and "width".
+# • Value type: String
+# • Default value: best-fit
+#
+# advance-pages-per-row
+# Defines if the number of pages per row should be honored when advancing a page.
+# • Value type: Boolean
+# • Default value: false
+#
+# continuous-hist-save
+# Tells zathura whether to save document history at each page change or only when closing a document.
+# • Value type: Boolean
+# • Default value: false
+#
+# database
+# Defines  the  database backend to use for bookmarks and input history. Possible values are "plain", "sqlite" and "null". If "null" is used, bookmarks and input
+# history will not be stored.
+# Note that the "plain" backend is deprecated. If selected, the "sqlite" backend will import old history from the "plain" database and  operation  will  continue
+# with the "sqlite" backend. After the first import, the setting can safely be changed to "sqlite". The default will change after a release of Debian trixie.
+# • Value type: String
+# • Default value: plain
+set database "null"
+#
+# dbus-raise-window
+# Defines whether zathura's window should be raised when receiving certain commands via D-Bus.
+# • Value type: Boolean
+# • Default value: true
+#
+# dbus-service
+# En/Disables the D-Bus service. If the services is disabled, SyncTeX forward synchronization is not available.
+# • Value type: Boolean
+# • Default value: true
+#
+# double-click-follow
+# Defines whether double or single click on a link should trigger follow.
+# • Value type: Boolean
+# • Default value: true
+#
+# filemonitor
+# Defines  the  file  monitor backend used to check for changes in files. Possible values are "glib", "signal" (if signal handling is supported), and "noop". The
+# "noop" file monitor does not trigger reloads.
+# • Value type: String
+# • Default value: glib
+#
+# first-page-column
+# Defines the column in which the first page will be displayed.  This setting is stored separately for every value of pages-per-row according  to  the  following
+# pattern <1 page per row>:[<2 pages per row>[: ...]]. The last value in the list will be used for all other number of pages per row if not set explicitly.
+# Per  default,  the first column is set to 2 for double-page layout, i.e. the value is set to 1:2. A value of 1:1:3 would put the first page in dual-page layout
+# in the first column, and for layouts with more columns the first page would be put in the 3rd column.
+# • Value type: String
+# • Default value: 1:2
+#
+# highlighter-modifier
+# Defines the modifier that needs to be pressed together with the left mouse button to draw the highlighter. Possible values are "shift", "ctrl" and "alt".
+# • Value type: String
+# • Default value: shift
+#
+# incremental-search
+# En/Disables incremental search (search while typing).
+# • Value type: Boolean
+# • Default value: true
+#
+#
+# jumplist-size
+# Maximum number of positions to remember in the jumplist.
+# • Value type: Integer
+# • Default value: 2000
+#
+# link-hadjust
+# En/Disables aligning to the left internal link targets, for example from the index.
+# • Value type: Boolean
+# • Default value: true
+#
+# link-zoom
+# En/Disables the ability of changing zoom when following links.
+# • Value type: Boolean
+# • Default value: true
+#
+# nohlsearch
+# Dis/Enables the highlighting of search results.
+# • Value type: Boolean
+# • Default value: false
+#
+# open-first-page
+# Always open documents on the first page. If disabled, zathura will jump to the last remembered position.
+# • Value type: Boolean
+# • Default value: false
+set open-first-page true
+#
+# page-cache-size
+# Defines the maximum number of pages that could be kept in the page cache. When the cache is full and a new page that isn't cached becomes  visible,  the  least
+# recently  viewed page in the cache will be evicted to make room for the new one.  Large values for this variable are NOT recommended, because this will lead to
+# consuming a significant portion of the system memory.
+# • Value type: Integer
+# • Default value: 15
+#
+# page-padding
+# The page padding defines the gap in pixels between each rendered page.
+# • Value type: Integer
+# • Default value: 1
+#
+# page-right-to-left
+# Defines whether pages in multi-column view should start from the right side.
+# • Value type: Boolean
+# • Default value: false
+#
+# page-thumbnail-size
+# Defines the maximum size in pixels of the thumbnail that could be kept in the thumbnail cache per page. The thumbnail is scaled  for  a  quick  preview  during
+# zooming  before  the  page  is  rendered. When the page is rendered, the result is saved as the thumbnail only if the size is no more than this value. A larger
+# value increases quality but introduces longer delay in zooming and uses more system memory.
+# • Value type: Integer
+# • Default value: 4194304 (4M)
+#
+# pages-per-row
+# Defines the number of pages that are rendered next to each other in a row.
+# • Value type: Integer
+# • Default value: 1
+#
+# recolor
+# En/Disables recoloring
+# • Value type: Boolean
+# • Default value: false
+#
+#
+# recolor-keephue
+# En/Disables keeping original hue when recoloring
+# • Value type: Boolean
+# • Default value: false
+#
+#
+# recolor-reverse-video
+# Defines if original image colors should be kept while recoloring.
+# • Value type: Boolean
+# • Default value: false
+#
+# render-loading
+# Defines if the "Loading..." text should be displayed if a page is rendered.
+# • Value type: Boolean
+# • Default value: true
+#
+#
+# scroll-full-overlap
+# Defines the proportion of the current viewing area that should be visible after scrolling a full page.
+# • Value type: Float
+# • Default value: 0
+#
+# scroll-hstep
+# Defines the horizontal step size of scrolling by calling the scroll command once
+# • Value type: Float
+# • Default value: -1
+#
+# scroll-step
+# Defines the step size of scrolling by calling the scroll command once
+# • Value type: Float
+# • Default value: 40
+#
+# scroll-page-aware
+# Defines if scrolling by half or full pages stops at page boundaries.
+# • Value type: Boolean
+# • Default value: false
+set scroll-page-aware true
+#
+# scroll-wrap
+# Defines if the last/first page should be wrapped
+# • Value type: Boolean
+# • Default value: false
+#
+# search-hadjust
+# En/Disables horizontally centered search results.
+# • Value type: Boolean
+# • Default value: true
+#
+# selection-clipboard
+# Defines the X clipboard into which mouse-selected data will be written.  When it is "clipboard", selected data will be written to the CLIPBOARD clipboard,  and
+# can be pasted using the Ctrl+v key combination.  When it is "primary", selected data will be written to the PRIMARY clipboard, and can be pasted using the mid‐
+# dle mouse button, or the Shift-Insert key combination.
+# • Value type: String
+# • Default value: primary
+#
+# selection-notification
+# Defines if a notification should be displayed after selecting text.
+# • Value type: Boolean
+# • Default value: true
+#
+#
+# show-directories
+# Defines if the directories should be displayed in completion.
+# • Value type: Boolean
+# • Default value: true
+#
+# show-hidden
+# Defines if hidden files and directories should be displayed in completion.
+# • Value type: Boolean
+# • Default value: false
+set show-hidden true
+#
+# show-recent
+# Defines the number of recent files that should be displayed in completion.  If the value is negative, no upper bounds are applied. If the value is 0, no recent
+# files are shown.
+# • Value type: Integer
+# • Default value: 10
+#
+# show-signature-information
+# Defines whether additional information on signatures embedded in documents should be displayed.
+# • value type: Boolean
+# • Default value false
+#
+# statusbar-basename
+# Use basename of the file in the statusbar.
+# • Value type: Boolean
+# • Default value: false
+#
+# statusbar-home-tilde
+# Display a short version of the file path, which replaces $HOME with ~, in the statusbar.
+# • Value type: Boolean
+# • Default value: false
+set statusbar-home-tilde true
+#
+# statusbar-page-percent
+# Display (current page / total pages) as a percent in the statusbar.
+# • Value type: Boolean
+# • Default value: false
+set statusbar-page-percent true
+#
+# synctex
+# En/Disables SyncTeX backward synchronization support.
+# • Value type: Boolean
+# • Default value: true
+#
+# synctex-edit-modifier
+# Defines the modifier that needs to be pressed together with the left mouse button to trigger the SyncTeX backward synchronization. Possible values are "shift",
+# "ctrl" and "alt".
+# • Value type: String
+# • Default value: ctrl
+#
+# synctex-editor-command
+# Defines the command executed for SyncTeX backward synchronization.
+# • Value type: String
+# • Default value:
+#
+# vertical-center
+# Center the screen at the vertical midpoint of the page by default.
+# • Value type: Boolean
+# • Default value: false
+set vertical-center true
+#
+# window-icon-document
+# Defines whether the window document should be updated based on the first page of a dcument.
+# • Value type: Boolean
+# • Default value: false
+set window-icon-document true
+#
+# window-title-basename
+# Use basename of the file in the window title.
+# • Value type: Boolean
+# • Default value: false
+#
+# window-title-home-tilde
+# Display a short version of the file path, which replaces $HOME with ~, in the window title.
+# • Value type: Boolean
+# • Default value: false
+set window-title-home-tilde true
+#
+# window-title-page
+# Display the page number in the window title.
+# • Value type: Boolean
+# • Default value: false
+set window-title-page true
+#
+# zoom-center
+# En/Disables horizontally centered zooming.
+# • Value type: Boolean
+# • Default value: false
+#
+# zoom-max
+# Defines the maximum percentage that the zoom level can be.
+# • Value type: Integer
+# • Default value: 1000
+#
+# zoom-min
+# Defines the minimum percentage that the zoom level can be.
+# • Value type: Integer
+# • Default value: 10
+set zoom-min 15
+#
+# zoom-step
+# Defines the amount of percent that is zoomed in or out on each command.
+# • Value type: Integer
+# • Default value: 10
+set zoom-step 15
+include colours

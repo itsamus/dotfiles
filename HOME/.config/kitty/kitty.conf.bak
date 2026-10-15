@@ -1,0 +1,450 @@
+## ────────────────────╮
+## Kitty Configuration │
+## ────────────────────┴────────────────────────────────────────────────────────
+
+## Table of Contents
+
+## G_Font
+## Text-Cursor-Customization
+## Scrollback
+## Mouse
+## Mouse-Actions
+## Performance-Tuning
+## Terminal-Bell
+## Window-Layout
+## Tab-Bar
+## Color-Scheme
+## Advanced
+## Os-Specific-Tweaks
+## Keyboard-Shortcuts
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## G_Font
+
+# BEGIN_KITTY_FONTS
+font_family      family="JuliaMono"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS
+
+font_size           13.0
+
+force_ltr           no
+
+# symbol_map U+e000-U+e00a,U+e0a0-U+e0a2,U+e0b0-U+e0b3,U+e0b4-U+e0c8,U+e0cc-U+e0d7,U+e200-U+e2a9,U+e300-U+e3e3,U+e5fa-U+e6b7,U+e700-U+e8ef,U+ea60-U+ec1e,U+ed00-U+efce,U+f000-U+f2ff,U+f300-U+f381,U+f400-U+f533,U+f0001-U+f1af0 Symbols Nerd Font
+# narrow_symbols U+e000-U+f8ff 2
+#
+
+disable_ligatures   never
+
+# font_features       none
+# font_features JuliaMono-Regular +calt +zero
+font_features JuliaMono-Regular +calt +liga +zero +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +ss09 +ss10 +ss11 +ss12
+# font_features JuliaMono-Regular +calt
+# font_features JuliaMono-Bold +calt
+# font_features JuliaMono-Medium +calt
+# font_features JuliaMono-SemiBold +calt
+# font_features JuliaMono-Light +calt
+# modify_font         underline_position -2
+# modify_font         underline_thickness 150%
+# modify_font         strikethrough_thickness 200%
+# modify_font         strikethrough_position 2px
+#
+# modify_font         cell_width 80%
+# modify_font         cell_height -2px
+# modify_font         baseline 3
+
+box_drawing_scale               0.001, 1, 1.5, 2
+
+undercurl_style                 thin-sparse
+
+underline_exclusion             1
+
+text_composition_strategy       platform
+
+text_fg_override_threshold      0
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Text-Cursor-Customization
+
+cursor                          #fb2af4
+cursor_text_color               #121212
+
+cursor_shape                    beam
+cursor_shape_unfocused          underline
+
+cursor_beam_thickness           1.0
+cursor_underline_thickness      2.0
+
+cursor_blink_interval           -1
+cursor_stop_blinking_after      15.0
+
+cursor_trail                    1
+cursor_trail_decay              0.1 0.2
+cursor_trail_start_threshold    0
+cursor_trail_color              #d476cd
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Scrollback
+
+scrollback_lines                10000
+
+scrollbar                       scrolled
+scrollbar_interactive           yes
+scrollbar_jump_on_click         yes
+scrollbar_width                 0.5
+scrollbar_hover_width           1
+scrollbar_handle_opacity        0.5
+scrollbar_radius                0.3
+scrollbar_gap                   0.1
+scrollbar_min_handle_height     1
+scrollbar_hitbox_expansion      0.25
+scrollbar_track_opacity         0
+scrollbar_track_hover_opacity   0
+scrollbar_handle_color          #FCE094
+scrollbar_track_color           none
+
+progress_bar                    bottom
+
+# scrollback_pager less --chop-long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER
+# scrollback_pager_history_size 0
+# scrollback_fill_enlarged_window no
+
+wheel_scroll_multiplier         1.0
+wheel_scroll_min_lines          1
+
+touch_scroll_multiplier         1.0
+
+pixel_scroll                    yes
+
+momentum_scroll                 0.96
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Mouse
+
+mouse_hide_wait     -1.0
+
+url_color           #0087bd
+url_style           curly
+open_url_with       garcon-url-handler
+url_prefixes        file ftp ftps gemini git gopher http https irc ircs kitty mailto news sftp ssh
+detect_urls         yes
+# url_excluded_characters
+#
+show_hyperlink_targets  always
+underline_hyperlinks    hover
+
+copy_on_select                      yes
+clear_selection_on_clipboard_loss   no
+
+paste_actions                       no-op
+
+strip_trailing_spaces               always
+
+select_by_word_characters           @-./_~?&=%+#
+# select_by_word_characters_forward
+
+focus_follows_mouse                 yes
+pointer_shape_when_grabbed          arrow
+default_pointer_shape               arrow
+pointer_shape_when_dragging         beam crosshair
+
+drag_threshold                      5
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Mouse-Actions
+
+clear_all_mouse_actions yes
+
+mouse_map left click ungrabbed mouse_handle_click selection link prompt
+mouse_map shift+left click grabbed,ungrabbed mouse_handle_click selection link prompt
+mouse_map ctrl+shift+left release grabbed,ungrabbed mouse_handle_click link
+mouse_map ctrl+shift+left press grabbed discard_event
+mouse_map middle release ungrabbed paste_from_selection
+mouse_map left press ungrabbed mouse_selection normal
+mouse_map ctrl+alt+left press ungrabbed mouse_selection rectangle
+mouse_map left doublepress ungrabbed mouse_selection word
+mouse_map left triplepress ungrabbed mouse_selection line
+mouse_map alt+left triplepress ungrabbed mouse_selection line_from_begin
+mouse_map ctrl+alt+left triplepress ungrabbed mouse_selection line_from_point
+
+mouse_map right press ungrabbed mouse_selection extend
+mouse_map shift+left press ungrabbed mouse_selection extend
+mouse_map shift+middle release ungrabbed,grabbed paste_selection
+mouse_map shift+middle press grabbed discard_event
+mouse_map shift+left press grabbed mouse_selection normal
+mouse_map ctrl+shift+alt+left press ungrabbed,grabbed mouse_selection rectangle
+mouse_map shift+left doublepress ungrabbed,grabbed mouse_selection word
+mouse_map shift+left triplepress ungrabbed,grabbed mouse_selection line
+mouse_map shift+alt+left triplepress ungrabbed,grabbed mouse_selection line_from_begin
+mouse_map ctrl+shift+alt+left triplepress ungrabbed,grabbed mouse_selection line_from_point
+mouse_map shift+right press ungrabbed,grabbed mouse_selection extend
+mouse_map ctrl+shift+right press ungrabbed mouse_show_command_output
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Performance-Tuning
+
+# repaint_delay   10
+# input_delay     3
+sync_to_monitor     yes
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Terminal-Bell
+
+enable_audio_bell           no
+
+visual_bell_duration        0.3
+visual_bell_color           #FCE094
+
+window_alert_on_bell        yes
+bell_on_tab                 "🔔 "
+command_on_bell             none
+# macos_dock_badge_on_bell    yes
+# bell_path                   none
+# linux_bell_theme            __custom
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Window-Layout
+#
+remember_window_size        yes
+initial_window_width        640
+initial_window_height       400
+remember_window_position    no
+
+enabled_layouts splits, stack
+
+map ctrl+alt+- launch --location=hsplit
+map ctrl+alt+| launch --location=vsplit
+map ctrl+alt+. launch --location=split
+
+map ctrl+alt+,      layout_action rotate
+
+map ctrl+shift+up     move_window up
+map ctrl+shift+left   move_window left
+map ctrl+shift+right  move_window right
+map ctrl+shift+down   move_window down
+
+map ctrl+alt+left   neighboring_window left
+map ctrl+alt+right  neighboring_window right
+map ctrl+alt+up     neighboring_window up
+map ctrl+alt+down   neighboring_window down
+
+map ctrl+alt+x      toggle_layout stack
+
+map ctrl+alt+e layout_action equalize
+
+# window_resize_step_cells 1
+# window_resize_step_lines 1
+window_border_width 0.5pt
+
+draw_minimal_borders no
+draw_window_borders_for_single_window no
+
+window_margin_width 0
+single_window_margin_width -1
+
+window_padding_width 0
+single_window_padding_width -1
+placement_strategy center
+
+active_border_color #00ff00
+inactive_border_color #121212
+
+bell_border_color #FCE094
+
+inactive_text_alpha 1
+
+hide_window_decorations no
+
+window_logo_path /home/itsamus/FO3_Trophy_Those.png
+window_logo_position bottom-right
+window_logo_alpha 0.3
+window_logo_scale 0
+
+resize_debounce_time 0.1 0.5
+resize_in_steps no
+
+visual_window_select_characters 1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ
+confirm_os_window_close -1
+window_drag_tolerance 2
+window_drag_tolerance 2
+
+window_title_bar_min_windows 0
+# window_title_template "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.window}{progress_percent}{title}"
+active_window_title_template none
+window_title_bar_active_foreground none
+window_title_bar_active_background none
+window_title_bar_inactive_foreground none
+window_title_bar_inactive_background none
+window_title_bar_align center
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Tab-Bar
+
+tab_bar_edge bottom
+tab_bar_margin_width 0.0
+tab_bar_margin_height 0.0 0.0
+tab_bar_style powerline
+# tab_bar_style custom
+tab_bar_align left
+tab_bar_show_new_tab_button no
+tab_bar_min_tabs 2
+tab_switch_strategy previous
+tab_fade 0.25 0.5 0.75 1
+tab_separator " ┇"
+tab_powerline_style round
+tab_activity_symbol none
+tab_title_max_length 0
+tab_title_template "{fmt.fg.red}{bell_symbol}{activity_symbol}{secure_input_symbol}{fmt.fg.tab}{tab.last_focused_progress_percent}{title}"
+
+active_tab_foreground   #000
+active_tab_background   #F00eee
+active_tab_font_style   bold-italic
+inactive_tab_foreground #444
+inactive_tab_background #999
+inactive_tab_font_style normal
+
+tab_bar_background none
+tab_bar_margin_color none
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Color-Scheme
+
+foreground #f2f2f2
+background #121212
+
+background_opacity 0.9
+background_blur 1
+transparent_background_colors red@0.5 #00ff00@0.3
+dynamic_background_opacity no
+# background_image none
+# background_image_layout tiled
+# background_image_linear no
+# background_tint 0.0
+# background_tint_gaps 1.0
+dim_opacity 0.4
+
+selection_foreground #121212
+selection_background #FCE094
+
+palette_generate fixed
+
+color0 #000000
+color1 #cc0403
+color2  #19cb00
+color3  #cecb00
+color4  #0d73cc
+color5  #cb1ed1
+color6  #0dcdcd
+color7  #dddddd
+color8 #767676
+color9 #f2201f
+color10 #23fd00
+color11 #fffd00
+color12 #1a8fff
+color13 #fd28ff
+color14 #14ffff
+color15 #ffffff
+
+mark1_foreground black
+mark1_background #98d3cb
+
+mark2_foreground black
+mark2_background #f2dcd3
+
+mark3_foreground black
+mark3_background #f274bc
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Advanced
+
+shell bash --login
+editor nvim
+
+close_on_child_death no
+# remote_control_password
+
+allow_remote_control yes
+listen_on unix:@kitty-{kitty_pid}
+
+# env
+# filter_notification
+# watcher
+# exe_search_path
+update_check_interval 24
+auto_reload_config -1
+startup_session none
+
+clipboard_control write-clipboard write-primary read-clipboard read-primary
+clipboard_max_size 512
+allow_hyperlinks yes
+shell_integration enabled
+# allow_cloning ask
+# clone_source_strategies venv,conda,env_var,path
+# notify_on_cmd_finish never
+term xterm-kitty
+terminfo_type path
+# forward_stdio no
+# menu_map global "Actions::Launch something special" launch --hold --type=os-window sh -c "echo hello world"
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Os-Specific-Tweaks
+
+wayland_titlebar_color system
+linux_display_server auto
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Keyboard-Shortcuts
+
+map --allow-fallback=shifted,ascii kitty_mod+c copy_to_clipboard
+
+map --allow-fallback=shifted,ascii kitty_mod+c copy_to_clipboard
+
+kitty_mod ctrl+shift
+
+map ctrl+shift+p command_palette
+
+map ctrl+alt+r load_config_file
+
+enabled_layouts splits:equalize_on_close=true
+# Create a new window splitting the space used by the existing one so that
+# the two windows are placed one above the other
+map ctrl+alt+- launch --location=hsplit
+
+# Create a new window splitting the space used by the existing one so that
+# the two windows are placed side by side
+map ctrl+alt+| launch --location=vsplit
+
+# Create a new window splitting the space used by the existing one so that
+# the two windows are placed side by side if the existing window is wide or
+# one above the other if the existing window is tall.
+map ctrl+alt+. launch --location=split
+
+
+# Move the active window in the indicated direction
+map shift+up move_window up
+map shift+left move_window left
+map shift+right move_window right
+map shift+down move_window down
+
+# Switch focus to the neighboring window in the indicated direction
+map ctrl+shift+left neighboring_window left
+map ctrl+shift+right neighboring_window right
+map ctrl+shift+up neighboring_window up
+map ctrl+shift+down neighboring_window down
+
+map ctrl+alt+u kitten unicode_input --tab name

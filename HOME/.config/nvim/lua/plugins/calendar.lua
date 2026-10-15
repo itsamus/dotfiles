@@ -1,0 +1,27 @@
+vim.g.calendar_split = "horizontal"
+vim.g.calendar_position = "below"
+vim.g.calendar_height = 60
+vim.g.calendar_first_day = "monday"
+vim.g.calendar_date_endian = "litte"
+vim.g.calendar_date_separator = "-"
+vim.g.calendar_date_month_name = 1
+vim.g.calendar_date_full_month_name = 1
+vim.g.calendar_week_number = 1
+vim.g.calendar_task = 1
+vim.g.calendar_event_start_time = 1
+vim.g.calendar_event_start_time_minwidth = 24
+vim.g.calendar_clock_12hour = 0
+vim.g.calendar_frame = "unicode_round"
+vim.g.calendar_message_prefix = "CALC"
+vim.g.calendar_view = "month"
+vim.g.calendar_views = { "year", "month", "week", "day" }
+vim.g.calendar_cyclic_view = 1
+vim.g.calendar_google_calendar = 0
+vim.g.calendar_google_task = 0
+vim.g.calendar_skip_event_delete_confirm = 0
+vim.g.calendar_skip_task_delete_confirm = 0
+vim.g.calendar_skip_task_clear_completed_confirm = 0
+vim.g.calendar_yank_deleting = 1
+vim.g.calendar_task_delete = 0
+vim.g.calendar_cache_directory = "~/.cache/calendar.vim/"
+vim.keymap.set("n", "<leader>cal", "<cmd>Calendar -split=horizontal<CR>", { desc = "Open Kalender (horizontaal)" })

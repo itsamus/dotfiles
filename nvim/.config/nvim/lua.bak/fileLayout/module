@@ -1,8 +1,0 @@
-- [x] module die de comment achterhaalt
-
-- [ ] module die de colorcolum achterhaalt.
-  - [ ]
-        colorcolumn uit     --> return 1
-        colorcolumn aan 80  --> return 1
-        colorcolumn aan 100 --> return 2
-        colorcolumn aan 120 --> return 3

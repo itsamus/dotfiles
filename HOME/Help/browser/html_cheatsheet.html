@@ -1,0 +1,72 @@
+REQUIRED SYNTAX TO FUNCTION:
+===============================================================================
+
+<!DOCTYPE html>                         <!-- Declare Filetype | used by the browser -->
+<html lang="en">      </html>                     <!-- Declare at SOF and at EOF for all html contents -->
+<head>      </head>                     <!-- Technical metadata for the BROWSER -->
+    <!-- Elements in head: -->
+
+        <title>     </title>            <!-- Page title -->
+        <meta charset="utf-8">                                                    <!-- Typeset-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Proper scaling -->
+        <meta name="description" content=" USER_TEXT ">                           <!-- Description for search engines -->
+    <!--                   -->
+
+<body>      </body>                     <!-- Visable content for the end-user -->
+    <!-- Elements in body: -->
+
+    <header>        </header>           <!-- Page introduction | often used for logo, site name, searchbar, etc -->
+
+    <!--                   -->
+
+
+<!--   5 The Visible Content                                    <body>    </body> -->
+<!--     - This component contains all the content that is actually visible to the visitor.    -->
+<!--       It renders text, images, videos, and links.                            -->
+<!--    .1 <header> </header> -- The introduction of the page, often containing the logo, site name, and potentially a search bar. -->
+<!--    .2 <nav> </nav>       -- The main navigation or the menu of the website. -->
+<!--    .3 <main> </main>     -- The unique main content of the specific page. This is allowed to occur only once per page.-->
+<!--      .1 <section> </section> -- A thematic grouping of content, usually with its own subheading (for example, an "About us" or "Our services" section).-->
+<!--      .2 <article> </article> -- A self-contained piece of content that could be independently shared or reused, such as a blog post, news article, or forum contribution. -->
+<!--    .4 <aside> </aside>   -- A sidebar with content that is tangentially related to the main text (for example, advertisements, links to other articles, or a biography). -->
+<!--    .5 <footer> </footer> -- The footer at the bottom of the page, often containing copyright information, privacy policies, and contact details. -->
+<!--                                                                            -->
+<!--    .6 Layout Containers & Text Formatting                                  -->
+<!--       - <div> </div> (Division): An invisible box that takes up an entire block on the page (block-level). Extremely commonly used for layout. -->
+<!--       - <span> </span>: An invisible container for a small piece of text within a line (inline), for example, to give one specific word a different color. -->
+<!--       - Inside text elements:                                              -->
+<!--         <strong> </strong> -- Makes text important (and bold by default).  -->
+<!--         <em> </em>: Emphasizes text (and makes it italic by default).      -->
+<!--         <br>: A line break (enter) to jump to the next line. Note: this is a self-closing tag, just like <img>! -->
+<!--                                                                            -->
+<!--    .7 Content Elements                                                     -->
+<!--      .1 Headings: <h1> </h1> through <h6> </h6> -- Headings from large to small. -->
+<!--      .2 Text: <p> </p> -- For body text                                   -->
+<!--               <pre> </pre> -- to show text exactly as typed.              -->
+<!--      .3 Media:                                                            -->
+<!--         - Images: <img> (Self-closing tag)                                -->
+<!--         - Videos: <video> </video>                                        -->
+<!--         - Audio:  <audio> </audio>                                        -->
+<!--      .4 Lists:                                                            -->
+<!--         - Numbered:   <ol> </ol>                                          -->
+<!--         - Unnumbered: <ul> </ul>                                          -->
+<!--         - Items:      <li> </li>                                          -->
+<!--      .5 Hyperlinks:                                                       -->
+<!--         - Link to other pages: <a> </a>                                   -->
+<!--      .6 Tables:                                                           -->
+<!--         - Display data in a structured format: <table> </table>           -->
+<!--         - <tr> </tr> (Table Row): A horizontal row.                       -->
+<!--         - <th> </th> (Table Header): A header cell at the top of the column (often bold by default). -->
+<!--         - <td> </td> (Table Data): A normal cell containing the data.     -->
+<!--                                                                           -->
+<!--    .8 Interactive Components                                              -->
+<!--       - Components with which the visitor can take action:                -->
+<!--           <form> </form> -- Forms for purposes like a contact page, login screen, or survey. Within a form, you will find components such as: -->
+<!--           <input> -- Input Fields (Self-closing tag)                      -->
+<!--           <textarea> </textarea> -- Text Areas                            -->
+<!--           <select> </select> -- Dropdown menus                            -->
+<!--           <button> </button> -- Clickable Buttons                         -->
+<!--                                                                           -->
+<!--   * Linking External Files (Inside <head>)                                -->
+<!--     - <link rel="stylesheet" href="style.css"> : To link your CSS file (self-closing). -->
+<!--     - <script src="script.js"></script> : To add JavaScript for interactivity. -->

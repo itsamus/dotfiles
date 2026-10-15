@@ -1,0 +1,26 @@
+lua/
+Wat het doet: De centrale map voor al je Lua-modules en configuratiebestanden. Je kunt bestanden hierin inladen via require('modulenaam').
+
+
+plugin/
+Wat het doet: Alles wat je in deze map zet (zowel .lua als .vim bestanden) wordt altijd automatisch ingeladen bij elke opstart van Neovim, in willekeurige volgorde. Ideaal voor globale keymaps en opties.
+
+
+ftplugin/
+Wat het doet: Bestandstype-specifieke instellingen. Als je hier een bestand neerzet dat vernoemd is naar een filetype (bijv. ftplugin/lua.lua of ftplugin/markdown.vim), worden die opties alleen toegepast als je een bestand van dat type opent.
+
+
+syntax/
+Wat het doet: Hierin plaats je syntax-highlighting regels gekoppeld aan een bestandstype (bijv. syntax/mijnstijl.vim), zoals we net bespraken.
+
+
+indent/
+Wat het doet: Bevat automatische inspringingsregels per bestandstype (bijv. hoeveel spaties een tab is voor Python versus C++).
+
+
+colors/
+Wat het doet: Hier kun je eigen kleurthema's (.lua of .vim) in opslaan, zodat je ze kunt selecteren met :colorscheme.
+
+
+after/
+Wat het doet: Deze map heeft dezelfde substructuur als hierboven (zoals after/plugin/ of after/ftplugin/). Alles hierin wordt als allerlaatste ingeladen, nadat alle standaardplugins en configuraties zijn geladen. Perfect om instellingen van plugins te overschrijven.

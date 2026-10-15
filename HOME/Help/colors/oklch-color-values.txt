@@ -1,0 +1,33 @@
+##  Buttons and Brand Colors
+    For primary actions, developers often look for the “sweet spot” where the color is saturated but doesn't “vibrate” on the screen.
+        Lightness (L): Between 0.50 (darker/serious) and 0.65 (fresh/vibrant).
+        Chroma    (C): Usually between 0.15 and 0.25.
+    Note: If you go above 0.25, you often enter the “P3” color space (wide gamut), which falls outside the range of some older screens.
+
+
+##  Text Colors (Contrast & Readability)
+    For good readability (WCAG standards), extreme values are used:
+        Dark  mode text: L between 0.90 and 0.98, with a very low C (e.g., 0.01) to add a subtle hint of the brand color.
+        Light mode text: L between 0.10 and 0.25, also with a low C (0.01–0.05) to prevent black from appearing too “harsh.”
+
+
+##  Backgrounds and Maps (Surfaces)
+    Light mode: L > 0.95, C < 0.01.
+    Dark  mode: L between 0.20 and 0.30, C around 0.02 to 0.05.
+Useful Table for Design Systems
+Developers who recreate a color palette (such as Tailwind) in OKLCH often use these ratios:
+
+    Hue(Scale)      Lightness(L)      Chroma(C)     Usage
+    50 (Light)          0.97            0.01        Backgrounds
+    500 (Base)          0.60            0.18        Buttons / Icons
+    900 (Dark)          0.25            0.05	    Text / Headings
+
+Why keep Chroma (C) low?
+A common mistake is setting C too high. In OKLCH, a C of 0.10 is already quite colorful.
+
+0.00 is gray.
+0.10 is a “subtle” UI color.
+0.20 is a bright accent color.
+0.30+ is extremely neon and may fall outside the range of many screens (gamut clipping).
+
+Tip: Do you use Chrome DevTools? You can now set the color picker to OKLCH there. You’ll see that most professional sites keep their Chroma between 0.05 and 0.12 for a balanced look.

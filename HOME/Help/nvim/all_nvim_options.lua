@@ -1,0 +1,386 @@
+local set = vim.o
+
+-- A ===========================================================================
+-- set.allowrevins            -- allow CTRL-_ in Insert mode
+-- set.ambiwidth              -- what to do with Unicode chars of ambiguous width
+-- set.arabic                 -- for Arabic as a default second language
+-- set.arabicshape            -- do shaping for Arabic characters
+-- set.autochdir              -- change directory to the file in the current window
+-- set.autocomplete           -- enable automatic completion in insert mode
+-- set.autocompletedelay      -- delay in msec before menu appears after typing
+-- set.autocompletetimeout    -- initial decay timeout for autocompletion algorithm
+-- set.autoindent             -- take indent for new line from previous line
+-- set.autoread               -- autom. read file when changed outside of Vim
+-- set.autowrite              -- automatically write file if changed
+-- set.autowriteall           -- as autowrite, but works with more commands
+
+-- B ===========================================================================
+-- set.background        -- "dark" or "light", used for highlight colors
+-- set.backspace         -- how backspace works at start of line
+-- set.backup            -- keep backup file after overwriting a file
+-- set.backupcopy        -- make backup as a copy, dont rename the file
+-- set.backupdir         -- list of directories for the backup file
+-- set.backupext         -- extension used for the backup file
+-- set.backupskip        -- no backup for files that match these patterns
+-- set.belloff           -- do not ring the bell for these reasons
+-- set.binary            -- read/write/edit file in binary mode
+-- set.bomb              -- a Byte Order Mark to the file
+-- set.breakat           -- characters that may cause a line break
+-- set.breakindent       -- wrapped line repeats indent
+-- set.breakindentopt    -- settings for breakindent
+-- set.browsedir         -- which directory to start browsing in
+-- set.bufhidden         -- what to do when buffer is no longer in window
+-- set.buflisted         -- whether the buffer shows up in the buffer list
+-- set.buftype           -- special type of buffer
+
+-- C ===========================================================================
+-- set.casemap            -- specifies how case of letters is changed
+-- set.cdhome             -- change directory to the home directory by ":cd"
+-- set.cdpath             -- list of directories searched with ":cd"
+-- set.cedit              -- used to open the command-line window
+-- set.charconvert        -- expression for character encoding conversion
+-- set.chistory           -- maximum number of quickfix lists in history
+-- set.cindent            -- do C program indenting
+-- set.cinkeys            -- keys that trigger indent when cindent is set
+-- set.cinoptions         -- how to do indenting when cindent is set
+-- set.cinscopedecls      -- words that are recognized by cino-g
+-- set.cinwords           -- words where si and cin add an indent
+-- set.clipboard          -- use the clipboard as the unnamed register
+-- set.cmdheight          -- number of lines to use for the command-line
+-- set.cmdwinheight       -- height of the command   -line window
+-- set.colorcolumn        -- columns to highlight
+-- set.columns            -- number of columns in the display
+-- set.comments           -- patterns that can start a comment line
+-- set.commentstring      -- template for comments; used for fold marker
+-- set.complete           -- specify how Insert mode completion works
+-- set.completefunc       -- function to be used for Insert mode completion
+-- set.completeopt        -- options for Insert mode completion
+-- set.completeslash      -- like shellslash for completion
+-- set.completetimeout    -- initial decay timeout for CTRL-N and CTRL-P
+-- set.concealcursor      -- whether concealable text is hidden in cursor line
+-- set.conceallevel       -- whether concealable text is shown or hidden
+-- set.confirm            -- ask what to do about unsaved/read-only files
+-- set.copyindent         -- make autoindent use existing indent structure
+-- set.cpoptions          -- flags for Vi-compatible behavior
+-- set.cursorbind         -- move cursor in window as it moves in other windows
+-- set.cursorcolumn       -- highlight the screen column of the cursor
+-- set.cursorline         -- highlight the screen line of the cursor
+-- set.cursorlineopt      -- settings for cursorline
+
+-- D ===========================================================================
+-- set.debug          -- to "msg" to see all error messages
+-- set.define         -- pattern to be used to find a macro definition
+-- set.delcombine     -- delete combining characters on their own
+-- set.dictionary     -- list of file names used for keyword completion
+-- set.diff           -- diff mode for the current window
+-- set.diffanchors    -- list of {address} to force anchoring of a diff
+-- set.diffexpr       -- expression used to obtain a diff file
+-- set.diffopt        -- options for using diff mode
+-- set.digraph        -- enable the entering of digraphs in Insert mode
+-- set.directory      -- list of directory names for the swap file
+-- set.display        -- list of flags for how to display text
+
+-- E ===========================================================================
+-- set.eadirection       -- in which direction equalalways works
+-- set.encoding          -- encoding used internally
+-- set.endoffile         -- write CTRL-Z at end of the file
+-- set.endofline         -- write <EOL> for last line in file
+-- set.equalalways       -- windows are automatically made the same size
+-- set.equalprg          -- external program to use for "=" command
+-- set.errorbells        -- ring the bell for error messages
+-- set.errorfile         -- name of the errorfile for the QuickFix mode
+-- set.errorformat       -- description of the lines in the error file
+-- set.eventignore       -- autocommand events that are ignored
+-- set.eventignorewin    -- autocommand events that are ignored in a window
+-- set.expandtab         -- use spaces when <Tab> is inserted
+-- set.exrc              -- read init files in the current directory
+
+-- F ===========================================================================
+-- set.fileencoding      -- file encoding for multibyte text
+-- set.fileencodings     -- automatically detected character encodings
+-- set.fileformat        -- file format used for file I/O
+-- set.fileformats       -- automatically detected values for fileformat
+-- set.fileignorecase    -- ignore case when using file names
+-- set.filetype          -- type of file, used for autocommands
+-- set.fillchars         -- characters to use for displaying special items
+-- set.findfunc          -- function to be called for the |:find| command
+-- set.fixendofline      -- make sure last line in file has <EOL>
+-- set.foldclose         -- close a fold when the cursor leaves it
+-- set.foldcolumn        -- width of the column used to indicate folds
+-- set.foldenable        -- set to display all folds open
+-- set.foldexpr          -- expression used when foldmethod is "expr"
+-- set.foldignore        -- ignore lines when foldmethod is "indent"
+-- set.foldlevel         -- close folds with a level higher than this
+-- set.foldlevelstart    -- foldlevel when starting to edit a file
+-- set.foldmarker        -- markers used when foldmethod is "marker"
+-- set.foldmethod        -- folding type
+-- set.foldminlines      -- minimum number of lines for a fold to be closed
+-- set.foldnestmax       -- maximum fold depth
+-- set.foldopen          -- for which commands a fold will be opened
+-- set.foldtext          -- expression used to display for a closed fold
+-- set.formatexpr        -- expression used with "gq" command
+-- set.formatlistpat     -- pattern used to recognize a list header
+-- set.formatoptions     -- how automatic formatting is to be done
+-- set.formatprg         -- name of external program used with "gq" command
+-- set.fsync             -- whether to invoke fsync() after file write
+
+-- G ===========================================================================
+-- set.grepformat       -- format of grepprg output
+-- set.grepprg          -- program to use for ":grep"
+-- set.guicursor        -- GUI: settings for cursor shape and blinking
+-- set.guifont          -- GUI: Name(s) of font(s) to be used
+-- set.guifontwide      -- list of font names for double-wide characters
+-- set.guioptions       -- GUI: Which components and options are used
+-- set.guitablabel      -- GUI: custom label for a tab page
+-- set.guitabtooltip    -- GUI: custom tooltip for a tab page
+
+
+-- H ===========================================================================
+-- set.helpfile      -- full path name of the main help file
+-- set.helpheight    -- minimum height of a new help window
+-- set.helplang      -- preferred help languages
+-- set.hidden        -- dont unload buffer when it is |abandon|ed
+-- set.history       -- number of command-lines that are remembered
+-- set.hlsearch      -- highlight matches with last search pattern
+
+-- I ===========================================================================
+-- set.icon           -- Vim set the text of the window icon
+-- set.iconstring     -- to use for the Vim icon text
+-- set.ignorecase     -- ignore case in search patterns
+-- set.imcmdline      -- use IM when starting to edit a command line
+-- set.imdisable      -- do not use the IM in any mode
+-- set.iminsert       -- use :lmap or IM in Insert mode
+-- set.imsearch       -- use :lmap or IM when typing a search pattern
+-- set.include        -- pattern to be used to find an include file
+-- set.includeexpr    -- expression used to process an include line
+-- set.incsearch      -- highlight match while typing search pattern
+-- set.indentexpr     -- expression used to obtain the indent of a line
+-- set.indentkeys     -- keys that trigger indenting with indentexpr
+-- set.infercase      -- adjust case of match for keyword completion
+-- set.isfname        -- characters included in file names and pathnames
+-- set.isident        -- characters included in identifiers
+-- set.iskeyword      -- characters included in keywords
+-- set.isprint        -- printable characters
+
+-- J ===========================================================================
+-- set.joinspaces     -- two spaces after a period with a join command
+-- set.jumpoptions    -- specifies how jumping is done
+
+-- K ===========================================================================
+-- set.keymap        -- name of a keyboard mapping
+-- set.keymodel      -- enable starting/stopping selection with keys
+-- set.keywordprg    -- program to use for the "K" command
+
+-- L ===========================================================================
+-- set.langmap        -- alphabetic characters for other language mode
+-- set.langmenu       -- language to be used for the menus
+-- set.langremap      -- do apply langmap to mapped characters
+-- set.laststatus     -- tells when last window has status lines
+-- set.lazyredraw     -- dont redraw while executing macros
+-- set.lhistory       -- maximum number of location lists in history
+-- set.linebreak      -- wrap long lines at a blank
+-- set.lines          -- of lines in the display
+-- set.linespace      -- number of pixel lines to use between characters
+-- set.lisp           -- indenting for Lisp
+-- set.lispoptions    -- changes how Lisp indenting is done
+-- set.lispwords      -- words that change how lisp indenting works
+-- set.list           -- <Tab> and <EOL>
+-- set.listchars      -- characters for displaying in list mode
+-- set.loadplugins    -- load plugin scripts when starting up
+
+-- M ===========================================================================
+-- set.makeef            -- name of the errorfile for ":make"
+-- set.makeencoding      -- encoding of external make/grep commands
+-- set.makeprg           -- program to use for the ":make" command
+-- set.matchpairs        -- pairs of characters that "%" can match
+-- set.matchtime         -- tenths of a second to show matching paren
+-- set.maxcombine        -- maximum nr of combining characters displayed
+-- set.maxfuncdepth      -- maximum recursive depth for user functions
+-- set.maxmapdepth       -- maximum recursive depth for mapping
+-- set.maxmempattern     -- maximum memory (in Kbyte) used for pattern search
+-- set.menuitems         -- maximum number of items in a menu
+-- set.mkspellmem        -- memory used before |:mkspell| compresses the tree
+-- set.modeline          -- recognize modelines at start or end of file
+-- set.modelineexpr      -- allow setting expression options from a modeline
+-- set.modelines         -- number of lines checked for modelines
+-- set.modifiable        -- changes to the text are not possible
+-- set.modified          -- buffer has been modified
+-- set.more              -- listings when the whole screen is filled
+-- set.mouse             -- the use of mouse clicks
+-- set.mousefocus        -- keyboard focus follows the mouse
+-- set.mousehide         -- hide mouse pointer while typing
+-- set.mousemodel        -- changes meaning of mouse buttons
+-- set.mousemoveevent    -- report mouse moves with <MouseMove>
+-- set.mousescroll       -- to scroll by when scrolling with a mouse
+-- set.mouseshape        -- shape of the mouse pointer in different modes
+-- set.mousetime         -- max time between mouse double-click
+
+-- N ===========================================================================
+-- set.nrformats      -- number formats recognized for CTRL-A command
+-- set.number         -- print the line number in front of each line
+-- set.numberwidth    -- number of columns used for the line number
+
+-- O ===========================================================================
+-- set.omnifunc        -- function for filetype-specific completion
+-- set.opendevice      -- allow reading/writing devices on MS-Windows
+-- set.operatorfunc    -- function to be called for |g@| operator
+
+-- P ===========================================================================
+-- set.packpath          -- list of directories used for packages
+-- set.paragraphs        -- nroff macros that separate paragraphs
+-- set.patchexpr         -- expression used to patch a file
+-- set.patchmode         -- keep the oldest version of a file
+-- set.path              -- list of directories searched with "gf" et.al.
+-- set.preserveindent    -- preserve the indent structure when reindenting
+-- set.previewheight     -- height of the preview window
+-- set.previewwindow     -- identifies the preview window
+-- set.pumheight         -- maximum number of items to show in the popup menu
+-- set.pumwidth          -- minimum width of the popup menu
+-- set.pyxversion        -- Python version used for pyx* commands
+-- set.quoteescape       -- escape characters used in a string
+
+-- R ===========================================================================
+-- set.readonly          -- disallow writing the buffer
+-- set.redrawtime        -- timeout for hlsearch and |:match| highlighting
+-- set.regexpengine      -- default regexp engine to use
+-- set.relativenumber    -- show relative line number in front of each line
+-- set.report            -- for reporting nr. of lines changed
+-- set.revins            -- inserting characters will work backwards
+-- set.rightleft         -- window is right                       -to-left oriented
+-- set.rightleftcmd      -- commands for which editing works right-to-left
+-- set.ruler             -- show cursor line and column in the status line
+-- set.rulerformat       -- custom format for the ruler
+-- set.runtimepath       -- list of directories used for runtime files
+
+-- S ===========================================================================
+-- set.scroll            -- lines to scroll with CTRL-U and CTRL-D
+-- set.scrollbind        -- scroll in window as other windows scroll
+-- set.scrolljump        -- minimum number of lines to scroll
+-- set.scrolloff         -- minimum nr. of lines above and below cursor
+-- set.scrollopt         -- how scrollbind should behave
+-- set.sections          -- nroff macros that separate sections
+-- set.secure            -- mode for reading .vimrc in current dir
+-- set.selection         -- what type of selection to use
+-- set.selectmode        -- when to use Select mode instead of Visual mode
+-- set.sessionoptions    -- options for |:mksession|
+-- set.shada             -- use |shada| file upon startup and exiting
+-- set.shell             -- name of shell to use for external commands
+-- set.shellcmdflag      -- flag to shell to execute one command
+-- set.shellpipe         -- string to put output of ":make" in error file
+-- set.shellquote        -- quote character(s) for around shell command
+-- set.shellredir        -- string to put output of filter in a temp file
+-- set.shellslash        -- use forward slash for shell file names
+-- set.shelltemp         -- whether to use a temp file for shell commands
+-- set.shellxescape      -- characters to escape when shellxquote is (
+-- set.shellxquote       -- like shellquote, but include redirection
+-- set.shiftround        -- round indent to multiple of shiftwidth
+-- set.shiftwidth        -- number of spaces to use for (auto)indent step
+-- set.shortmess         -- list of flags, reduce length of messages
+-- set.showbreak         -- string to use at the start of wrapped lines
+-- set.showcmd           -- show (partial) command somewhere
+-- set.showcmdloc        -- where to show (partial) command
+-- set.showfulltag       -- show full tag pattern when completing tag
+-- set.showmatch         -- briefly jump to matching bracket if insert one
+-- set.showmode          -- message on status line to show current mode
+-- set.showtabline       -- tells when the tab pages line is displayed
+-- set.sidescroll        -- minimum number of columns to scroll horizontal
+-- set.sidescrolloff     -- min. nr. of columns to left and right of cursor
+-- set.signcolumn        -- when and how to display the sign column
+-- set.smartcase         -- no ignore case when pattern has uppercase
+-- set.smartindent       -- smart autoindenting for C programs
+-- set.smarttab          -- <Tab> in leading whitespace indents by shiftwidth
+-- set.smoothscroll      -- scroll by screen lines when wrap is set
+-- set.softtabstop       -- number of columns between two soft tab stops
+-- set.spell             -- spell checking
+-- set.spellcapcheck     -- pattern to locate end of a sentence
+-- set.spellfile         -- files where |zg| and |zw| store words
+-- set.spelllang         -- language(s) to do spell checking for
+-- set.spelloptions      -- options for spell checking
+-- set.spellsuggest      -- method(s) used to suggest spelling corrections
+-- set.splitbelow        -- new window from split is below the current one
+-- set.splitkeep         -- determines scroll behavior for split windows
+-- set.splitright        -- new window is put right of the current one
+-- set.startofline       -- commands move cursor to first non-blank in line
+-- set.statuscolumn      -- custom format for the status column
+-- set.statusline        -- custom format for the status line
+-- set.suffixes          -- suffixes that are ignored with multiple match
+-- set.suffixesadd       -- suffixes added when searching for a file
+-- set.swapfile          -- whether to use a swapfile for a buffer
+-- set.switchbuf         -- sets behavior when switching to another buffer
+-- set.synmaxcol         -- maximum column to find syntax items
+-- set.syntax            -- syntax to be loaded for current buffer
+
+-- T ===========================================================================
+-- set.tabclose         -- which tab page to focus when closing a tab
+-- set.tabline          -- custom format for the console tab pages line
+-- set.tabpagemax       -- maximum number of tab pages for |-p| and "tab all"
+-- set.tabstop          -- number of columns between two tab stops
+-- set.tagbsearch       -- use binary searching in tags files
+-- set.tagcase          -- how to handle case when searching in tags files
+-- set.tagfunc          -- function to get list of tag matches
+-- set.taglength        -- number of significant characters for a tag
+-- set.tagrelative      -- file names in tag file are relative
+-- set.tags             -- list of file names used by the tag command
+-- set.tagstack         -- push tags onto the tag stack
+-- set.term             -- of the terminal
+-- set.termbidi         -- terminal takes care of bi-directionality
+-- set.termguicolors    -- enable 24-bit RGB color in the TUI
+-- set.textwidth        -- maximum width of text that is being inserted
+-- set.thesaurus        -- list of thesaurus files for keyword completion
+-- set.thesaurusfunc    -- function to be used for thesaurus completion
+-- set.tildeop          -- tilde command "~" behaves like an operator
+-- set.timeout          -- time out on mappings and key codes
+-- set.timeoutlen       -- time out time in milliseconds
+-- set.title            -- Vim set the title of the window
+-- set.titlelen         -- of columns used for window title
+-- set.titleold         -- title, restored when exiting
+-- set.titlestring      -- to use for the Vim window title
+-- set.ttimeout         -- out on mappings
+-- set.ttimeoutlen      -- time out time for key codes in milliseconds
+-- set.ttytype          -- alias for term
+
+-- U ===========================================================================
+-- set.undodir        -- where to store undo files
+-- set.undofile       -- save undo information in a file
+-- set.undolevels     -- maximum number of changes that can be undone
+-- set.undoreload     -- max nr of lines to save for undo on a buffer reload
+-- set.updatecount    -- after this many characters flush swap file
+-- set.updatetime     -- after this many milliseconds flush swap file
+
+-- V ===========================================================================
+-- set.varsofttabstop    -- a list of number of columns between soft tab stops
+-- set.vartabstop        -- a list of number of columns between tab stops
+-- set.verbose           -- give informative messages
+-- set.verbosefile       -- file to write messages in
+-- set.viewdir           -- directory where to store files with :mkview
+-- set.viewoptions       -- specifies what to save for :mkview
+-- set.virtualedit       -- when to use virtual editing
+-- set.visualbell        -- use visual bell instead of beeping
+
+-- W ===========================================================================
+-- set.warn              -- for shell command when buffer was changed
+-- set.whichwrap         -- allow specified keys to cross line boundaries
+-- set.wildchar          -- command-line character for wildcard expansion
+-- set.wildcharm         -- like wildchar but also works when mapped
+-- set.wildignore        -- files matching these patterns are not completed
+-- set.wildignorecase    -- ignore case when completing file names
+-- set.wildmenu          -- use menu for command line completion
+-- set.wildmode          -- mode for wildchar command-line expansion
+-- set.wildoptions       -- specifies how command line completion is done
+-- set.winaltkeys        -- when the windows system handles ALT keys
+-- set.window            -- nr of lines to scroll for CTRL-F and CTRL-B
+-- set.winfixbuf         -- keep window focused on a single buffer
+-- set.winfixheight      -- keep window height when opening/closing windows
+-- set.winfixwidth       -- keep window width when opening/closing windows
+-- set.winheight         -- minimum number of lines for the current window
+-- set.winhighlight      -- window-local highlighting
+-- set.winminheight      -- minimum number of lines for any window
+-- set.winminwidth       -- minimal number of columns for any window
+-- set.winwidth          -- minimal number of columns for current window
+-- set.wrap              -- lines wrap and continue on the next line
+-- set.wrapmargin        -- chars from the right where wrapping starts
+-- set.wrapscan          -- searches wrap around the end of the file
+-- set.write             -- to a file is allowed
+-- set.writeany          -- write to file with no need for "!" override
+-- set.writebackup       -- make a backup before overwriting a file
+-- set.writedelay        -- delay this many msec for each char (for debug)

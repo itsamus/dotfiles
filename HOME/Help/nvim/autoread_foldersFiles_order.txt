@@ -1,0 +1,32 @@
+
+Dit is het volledige overzicht van alle mappen die Neovim uit zichzelf inleest:
+
+ * plugin/
+   Alle .lua- en .vim-bestanden in deze map (en directe submappen) worden automatisch bij elke opstart ingelezen. Je kunt de laadvolgorde bepalen door nummers aan de bestandsnamen te geven (zoals 10_options.lua, 20_keymaps.lua).
+
+ * lua/
+   De bibliotheekmap voor al je eigen modulaire scripts. Bestanden hier worden niet automatisch bij opstart uitgevoerd, maar kun je overal in je code inladen met require('mapstructuur.bestand').
+
+ * ftplugin/
+   Bestanden of mappen hierin vernoemd naar een programmeertaal (bijv. python.lua of een map python/) worden automatisch uitgevoerd zodra je een bestand van dat specifieke type opent.
+
+ * after/
+   Alles in deze map wordt als allerlaatste ingelezen, nadat al je standaardconfiguratie en plugins al zijn geladen. Dit is de plek om instellingen of keymaps van plugins te overschrijven. Bevat vaak submappen zoals after/plugin/ en after/ftplugin/.
+
+ * colors/
+   Bevat je eigen kleurenschema's (.lua- of .vim-bestanden). Je kunt ze direct activeren via bijvoorbeeld colorscheme jouwnaam.
+
+ * indent/
+   Bevat scripts om de inspringing (tabs en spaties) te regelen per bestandstype (bijv. html.lua of python.vim).
+
+ * syntax/
+   Bevat traditionele syntax-highlightingbestanden per taal (wordt tegenwoordig grotendeels overgenomen door Treesitter).
+
+ * queries/
+   Wordt door Treesitter gebruikt voor geavanceerde syntax-queries, parsing en folding per programmeertaal.
+
+ * compiler/
+   Bevat instellingen voor specifieke compilers of linterstools zodat Neovim weet hoe het code moet bouwen of controleren via :make.
+
+ * autoload/
+   Bevat Vimscript-functies die pas automatisch in het geheugen worden geladen op het moment dat ze daadwerkelijk worden aangeroepen (voor Lua minder relevant, maar wordt nog veel gebruikt in oudere plugins).

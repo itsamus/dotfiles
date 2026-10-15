@@ -1,0 +1,277 @@
+## ─────────────────────╮
+## YT-DLP configuration │
+## ─────────────────────┴───────────────────────────────────────────────────────
+## Table of Contents
+
+## 1. Quicksettings
+## 2. Default Settings
+## 2.1 General Settings
+## 3. Optional Settings
+## 3.1 General Settings
+## 3.2 Network Settings
+## 3.3 Video Selection
+## 3.4 Download Settings
+## 3.5 Workarounds
+## 3.6 Authentication Settings
+## 3.7 Post-Processing Settings
+
+## ─────────────────────────────────────────────────────────────────────────────
+## 1. Quicksettings
+
+# --config-locations PATH
+# Location of the main configuration file; either the path to the config or its containing directory ("-" for stdin).  Can be used multiple times and inside oth‐
+# er configuration files
+
+# --no-playlist
+# Download only the video, if the URL refers to a video and a playlist
+
+# --yes-playlist
+# Download the playlist, if the URL refers to a video and a playlist
+
+# -P, --paths [TYPES:]PATH
+# The paths where the files should be downloaded.  Specify the type of file and the path separated by a colon ":".  All the same TYPES as --output are supported.
+# Additionally,  you  can  also provide "home" (default) and "temp" paths.  All intermediary files are first downloaded to the temp path and then the final files
+# are moved over to the home path after download is finished.  This option is ignored if --output is an absolute path
+
+# MMAARRKK
+# Video Format Options:
+# -f, --format FORMAT
+# Video format code, see "FORMAT SELECTION" for more details
+
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## 2. Default Settings
+
+# Update this program to the latest version
+--update
+
+# --js-runtimes RUNTIME[:PATH]
+# Additional  JavaScript  runtime  to enable, with an optional location for the runtime (either the path to the binary or its containing directory).  This option
+# can be used multiple times to enable multiple runtimes.  Supported runtimes are (in order of priority, from highest to lowest): deno, node, quickjs, bun.  Only
+# "deno" is enabled by default.  The highest priority runtime that is both enabled and available will be used.  In order to use a  lower  priority  runtime  when
+# "deno" is available, --no-js- runtimes needs to be passed before enabling other runtimes
+--js-runtimes "deno:/home/itsamus/.local/bin/deno"
+
+# --color [STREAM:]POLICY
+# Whether to emit color codes in output, optionally prefixed by the STREAM (stdout or stderr) to apply the setting to.  Can be one of "always", "auto" (default),
+# "never",  or  "no_color"  (use non color terminal sequences).  Use "auto-tty" or "no_color-tty" to decide based on terminal support only.  Can be used multiple
+# times
+--color "always"
+
+# -o, --output [TYPES:]TEMPLATE
+# Output filename template; see "OUTPUT TEMPLATE" for details
+--output %(title)s
+
+# --restrict-filenames
+# Restrict filenames to only ASCII characters, and avoid "&" and spaces in filenames
+--restrict-filenames
+
+# --cookies FILE
+# Netscape formatted file to read cookies from and dump cookie jar in
+--cookies /home/itsamus/.config/yt-dlp/cookies.txt
+
+# --write-thumbnail
+# Write thumbnail image to disk
+--write-thumbnail
+
+# --progress
+# Show progress bar, even if in quiet mode
+--progress
+
+# --console-title
+# Display progress in console titlebar
+--console-title
+
+# --write-subs
+# Write subtitle file
+--write-subs
+
+# --write-auto-subs
+# Write automatically generated subtitle file (Alias: --write-automatic-subs)
+--write-auto-subs
+
+# --sub-format FORMAT
+# Subtitle format; accepts formats preference separated by "/", e.g.  "srt" or "ass/srt/best"
+--sub-format "srt"
+
+# --sub-langs LANGS
+# Languages of the subtitles to download (can be regex) or "all" separated by commas, e.g.  --sub-langs "en.*,ja" (where "en.*" is a regex pattern  that  matches
+# "en"  followed  by  0  or  more  of any character).  You can prefix the language code with a "-" to exclude it from the requested languages, e.g.  --sub- langs
+# all,-live_chat.  Use --list-subs for a list of available language tags
+--sub-langs "en"
+
+# -x, --extract-audio
+# Convert video files to audio-only files (requires ffmpeg and ffprobe)
+--extract-audio
+
+# --audio-format FORMAT
+# Format to convert the audio to when -x is used.  (currently supported: best (default), aac, alac, flac, m4a, mp3, opus, vorbis, wav).  You can specify multiple
+# rules using similar syntax as --remux-video
+--audio-format m4a
+
+# --audio-quality QUALITY
+# Specify ffmpeg audio quality to use when converting the audio with -x.  Insert a value between 0 (best) and 10 (worst) for VBR or a specific bitrate like  128K
+# (default 5)
+--audio-quality 0
+
+# --embed-thumbnail
+# Embed thumbnail in the video as cover art
+--embed-thumbnail
+
+# --embed-metadata
+# Embed metadata to the video file.  Also embeds chapters/infojson if present unless --no-embed-chapters/--no-embed-info-json are used (Alias: --add-metadata)
+--embed-metadata
+
+# --ffmpeg-location PATH
+# Location of the ffmpeg binary; either the path to the binary or its containing directory
+--ffmpeg-location /home/itsamus/.local/bin/
+
+# --convert-subs FORMAT
+# Convert  the  subtitles  to another format (currently supported: ass, lrc, srt, vtt).  Use "--convert-subs none" to disable conversion (default) (Alias: --con‐
+# vert- subtitles)
+--convert-subs lrc
+
+# --convert-thumbnails FORMAT
+# Convert the thumbnails to another format (currently supported: jpg, png, webp).  You can specify multiple rules using similar syntax as  "--remux-video".   Use
+# "--convert- thumbnails none" to disable conversion (default)
+--convert-thumbnails png
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## 3. Optional Settings
+
+## 3.1 General Settings
+
+# --list-extractors
+# List all supported extractors and exit
+
+# --extractor-descriptions
+# Output descriptions of all supported extractors and exit
+
+# --use-extractors NAMES
+# Extractor  names  to  use  separated  by commas.  You can also use regexes, "all", "default" and "end" (end URL matching); e.g.  --ies "holodex.*,end,youtube".
+# Prefix the name with a "-" to exclude it, e.g.  --ies default,-generic.  Use --list-extractors for a list of extractor names.  (Alias: --ies)
+
+# --ignore-config
+# Don't load any more configuration files except those given to --config-locations.  For backward compatibility, if this option is found inside the  system  con‐
+# figuration file, the user configuration is not loaded.  (Alias: --no-config)
+
+# --no-config-locations
+# Do  not  load  any custom configuration files (default).  When given inside a configuration file, ignore all previous --config-locations defined in the current
+# file
+
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## 3.2 Network Settings
+
+# --impersonate CLIENT[:OS]
+# Client  to  impersonate for requests.  E.g.  chrome, chrome-110, chrome:windows-10.  Pass --impersonate="" to impersonate any client.  Note that forcing imper‐
+# sonation for all requests may have a detrimental impact on download speed and stability
+
+# --list-impersonate-targets
+# List available clients to impersonate.
+
+# -4, --force-ipv4
+# Make all connections via IPv4
+
+# -6, --force-ipv6
+# Make all connections via IPv6
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## 3.3 Video Settings
+
+# -I, --playlist-items ITEM_SPEC
+# Comma-separated playlist_index of the items to download.  You can specify a range using "[START]:[STOP][:STEP]".  For backward compatibility, START-STOP is al‐
+# so  supported.  Use negative indices to count from the right and negative STEP to download in reverse order.  E.g.  "-I 1:3,7,-5::2" used on a playlist of size
+# 15 will download the items at index 1,2,3,7,11,13,15
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## 3.4 Download Settings
+
+# -N, --concurrent-fragments N
+# Number of fragments of a dash/hlsnative video that should be downloaded concurrently (default is 1)
+--concurrent-fragments 8
+--downloader aria2c
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## 3.5 Workarounds
+
+# --no-check-certificates
+# Suppress HTTPS certificate validation
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## 3.6 Authentication Settings
+
+# --client-certificate CERTFILE
+# Path to client certificate file in PEM format.  May include the private key
+
+# --client-certificate-key KEYFILE
+# Path to private key file for client certificate
+
+# --client-certificate-password PASSWORD
+# Password for client certificate private key, if encrypted.  If not provided, and the key is encrypted, yt-dlp will ask interactively
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## 3.7 Post-Processing Settings
+
+# --remux-video FORMAT
+# Remux  the video into another container if necessary (currently supported: avi, flv, gif, mkv, mov, mp4, webm, aac, aiff, alac, flac, m4a, mka, mp3, ogg, opus,
+# vorbis, wav).  If the target container does not support the video/audio codec, remuxing will fail.  You can specify multiple rules; e.g.  "aac>m4a/mov>mp4/mkv"
+# will remux aac to m4a, mov to mp4 and anything else to mkv
+
+# --recode-video FORMAT
+# Re-encode the video into another format if necessary.  The syntax and supported formats are the same as --remux-video
+
+# --postprocessor-args NAME:ARGS
+# Give these arguments to the postprocessors.  Specify the postprocessor/executable name and the arguments separated by a colon ":" to give the argument  to  the
+# specified postprocessor/executable.  Supported PP are: Merger, ModifyChapters, SplitChapters, ExtractAudio, VideoRemuxer, VideoConvertor, Metadata, EmbedSubti‐
+# tle, EmbedThumbnail, SubtitlesConvertor, ThumbnailsConvertor, FixupStretched, FixupM4a, FixupM3u8, FixupTimestamp and FixupDuration.  The supported executables
+# are: AtomicParsley, FFmpeg and FFprobe.  You can also specify "PP+EXE:ARGS" to give the arguments to the specified executable only when being used by the spec‐
+# ified postprocessor.  Additionally, for ffmpeg/ffprobe, "_i"/"_o" can be appended to the prefix optionally followed by a number to pass the argument before the
+# specified  input/output  file,  e.g.  --ppa "Merger+ffmpeg_i1:-v quiet".  You can use this option multiple times to give different arguments to different post‐
+# processors.  (Alias: --ppa)
+
+# --parse-metadata [WHEN:]FROM:TO
+# Parse additional metadata like title/artist from other fields; see "MODIFYING METADATA" for details.  Supported values of "WHEN" are the same as that of --use-
+# postprocessor (default: pre_process)
+
+# --replace-in-metadata [WHEN:]FIELDS REGEX REPLACE
+# Replace text in a metadata field using the given regex.  This option can be used multiple times.  Supported values of "WHEN" are the same  as  that  of  --use-
+# postprocessor (default: pre_process)
+
+# --use-postprocessor NAME[:ARGS]
+# The (case-sensitive) name of plugin postprocessors to be enabled, and (optionally) arguments to be passed to it, separated by a colon ":".  ARGS  are  a  semi‐
+# colon ";" delimited list of NAME=VALUE.  The "when" argument determines when the postprocessor is invoked.  It can be one of "pre_process" (after video extrac‐
+# tion),  "after_filter" (after video passes filter), "video" (after --format; before --print/--output), "before_dl" (before each video download), "post_process"
+# (after each video download; default), "after_move" (after moving the video file to its final location), "after_video" (after  downloading  and  processing  all
+# formats of a video), or "playlist" (at end of playlist).  This option can be used multiple times to add different postprocessors
+
+# SponsorBlock Options:
+# Make  chapter  entries  for,  or  remove  various  segments  (sponsor,  introductions, etc.)  from downloaded YouTube videos using the SponsorBlock API (https://spon‐
+# sor.ajay.app)
+
+# --sponsorblock-mark CATS
+# SponsorBlock categories to create chapters for, separated by commas.  Available categories are sponsor, intro, outro, selfpromo, preview, filler,  interaction,
+# music_offtopic,  hook,  poi_highlight, chapter, all and default (=all).  You can prefix the category with a "-" to exclude it.  See [1] for descriptions of the
+# categories.  E.g.  --sponsorblock-mark all,-preview [1] https://wiki.sponsor.ajay.app/w/Segment_Categories
+
+# --sponsorblock-remove CATS
+# SponsorBlock categories to be removed from the video file, separated by commas.  If a category is present in both mark and  remove,  remove  takes  precedence.
+# The  syntax  and  available categories are the same as for --sponsorblock-mark except that "default" refers to "all,-filler" and poi_highlight, chapter are not
+# available
+
+# --sponsorblock-chapter-title TEMPLATE
+# An output template for the title of the SponsorBlock chapters created by --sponsorblock-mark.  The only available fields are  start_time,  end_time,  category,
+# categories, name, category_names.  Defaults to "[SponsorBlock]: %(category_names)l"
+
+# Extractor Options:
+# --extractor-args IE_KEY:ARGS
+# Pass  ARGS  arguments  to the IE_KEY extractor.  See "EXTRACTOR ARGUMENTS" for details.  You can use this option multiple times to give arguments for different
+# extractors

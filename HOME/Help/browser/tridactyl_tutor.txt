@@ -1,0 +1,2 @@
+# The tutorial for tridactyl browser-extension
+moz-extension://058c7f29-5369-4aaf-bca9-ec99766e67b0/static/clippy/1-tutor.html

@@ -1,0 +1,18 @@
+
+Element        |  Beschrijving                             | colors     |
+ - - - - - - - + - - - - - - - - - - - - - - - - - - - - - + - - - - - -+ - - - - - - - -
+root           |  De achtergrond van de gehele terminal    | black      |  gray
+border         |  De randen van de vensters                | red        |  brightred
+window         |  De achtergrond van het venster           | green      |  brightgreen
+shadow         |  De schaduw onder de vensters             | brown      |  yellow
+title          |  De titelbalk van het venster             | blue       |  brightblue
+button         |  De standaard knoppen                     | magenta    |  brightmagenta
+actbutton      |  De actieve (geselecteerde) knop          | cyan       |  brightcyan
+checkbox       |  De aankruisvakjes                        | lightgray  |  white
+actcheckbox    |  Het geselecteerde aankruisvakje          |
+entry          |  Invoervelden                             |
+label          |  Labels in het venster                    |
+listbox        |  De lijstweergave                         |
+actlistbox     |  Het geselecteerde item in de lijst       |
+textbox        |  Tekstblokken                             |
+actsellistbox  |  Geselecteerde item in een actieve lijst  |

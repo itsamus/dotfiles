@@ -1,0 +1,91 @@
+## ────────╮
+## aliasrc │
+## ────────┴────────────────────────────────────────────────────────────────────
+
+# alias diff='diff -yt --color=always --tabsize=2 --suppress-blank-empty'
+## Table of Contents
+
+## Basic-Aliasses
+## Kitty-Protocol
+## Interwebz
+## Commands
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Basic-Aliasses
+
+alias n='nvim'     # Run neovim
+alias c="clear && printf '\e[3J'"          # Clear the terminal screen
+alias conf='cd $HOME/.config/'             # Go to the config directory
+alias nali='nvim $HOME/.config/aliasrc'    # Open the alias file
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Kitty-Protocol
+
+alias show='kitty +kitten icat'    # Show images in the kitty terminal
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Interwebz
+
+alias ing="xdg-open https://mijn.ing.nl/login/"                     # Log in private
+alias ingb="xdg-open https://https://mijnzakelijk.ing.nl/login/"    # Log in business
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Commands
+
+alias wget='wget --hsts-file="$XDG_STATE_HOME/wget-hsts'
+alias bat='echo -e "this was run by a script [bat = batcat]\n" && batcat'       # Cat replacement
+alias calc='qalc'        # Run the calculator
+alias cp='cp -ir'        # Copy a file or directory
+alias df='df_logic'     # Free disk space || size current folder
+alias h='history'        # Show the history
+alias ls='lsa'           # ls
+alias tree='eza -A --tree --icons=always'
+alias mv='mv -i'         # Move a file or directory
+alias news='newsboat'    # Newsboat
+alias sxiv='nsxiv'       # nsxiv
+alias repgrep='rgr'      # Repgrep
+alias ripgrep='rg'       # Ripgrep
+alias rm='rm -rfi'       # Remove a file or directory
+# alias diff='diff -EBwZby --color=auto'    # Difference between files
+alias yt-dlp='$HOME/Documents/scripts/yt-dlp.sh'
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Sudo
+# alias nala='sudo nala'
+
+# Update and upgrade packages from the package manager
+# alias update='command -v nala >/dev/null 2>&1 && sudo nala update && sudo nala upgrade -y || (sudo apt update && sudo apt upgrade -y)'
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Scripts
+
+alias define='bash $HOME/scripts/define.sh'            # Define a word
+alias weeknummer='bash $HOME/scripts/weeknummer.sh'    # Week number
+alias ftag='python3 $HOME/scripts/tag_generator.py'    # Make a (file tag)
+alias hetweer='bash $HOME/scripts/hetweer.sh'          # Look up the wheater
+alias zara='bash $HOME/scripts/ZARA.sh'                # Work description
+alias pof='bash $HOME/scripts/pof.sh'                  # Add poffen data
+alias poflijst='bash $HOME/scripts/poflijst.sh'                  # Add poffen data
+alias minpof='bash $HOME/scripts/minpof.sh'                  # Add poffen data
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Changing Directories
+#
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias .......='cd ../../../../../..'
+alias ........='cd ../../../../../../..'
+alias .........='cd ../../../../../../../..'
+alias ..........='cd ../../../../../../../../..'
+
+alias wwgen='$HOME/scripts/wwgen.py'

@@ -1,0 +1,7 @@
+command: "magick (Voor versie 7 en hoger, het hoofdcommando)
+
+command: "convert (Voor het converteren van afbeeldingen)
+
+command: "identify (Om informatie over een afbeelding op te vragen)
+
+command: "mogrify (Om direct wijzigingen in bestanden door te voeren)
